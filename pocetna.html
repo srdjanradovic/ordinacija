@@ -1,0 +1,28 @@
+<!-- pocetna.html - sadržaj koji će biti učitan u #content div -->
+<div class="jumbotron p-5 mb-4 bg-light rounded-3 transparent-div">
+  <div class="container-fluid py-5 transparent-div">
+    <h1 class="display-5 fw-bold">Dobrodošli u Infinity Dental Care!</h1>
+    <p class="col-md-8 fs-4">Vaš osmeh je naša misija. Pružamo vrhunsku stomatološku uslugu prilagođenu Vašim potrebama.</p>
+    <a class="btn btn-primary btn-lg" href="zakazivanje.html" data-page="zakazivanje.html">Zakazivanje</a>
+  </div>
+</div>
+
+<div class="container mt-5 transparent-div">
+  <h2>Naše Usluge</h2>
+  <p>Pogledajte naše specijalne usluge i tretmane dizajnirane da vam pruže najbolju negu.</p>
+  <!-- Dodajte dodatni sadržaj ovde -->
+</div>
+
+  <!-- Custom JS za dinamičko učitavanje sadržaja -->
+  <script>
+    $(document).ready(function(){
+      // Kada se klikne na navigacioni link
+      $('.btn').click(function(e){
+        e.preventDefault();
+        $('#content').load("zakazivanje.html");
+        // Postavljanje aktivne klase
+        $('.btn').removeClass('active');
+        $(this).addClass('active');
+      });
+    });
+  </script>

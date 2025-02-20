@@ -1,0 +1,28 @@
+<!-- zakazivanje.html - sadržaj koji će biti učitan u #content div -->
+<div class="container mt-5">
+  <h2>Zakazivanje</h2>
+  <p>Ispunite formu ispod kako biste zakazali termin u našoj ordinaciji.</p>
+  <form id="appointmentForm">
+    <div class="mb-3">
+      <label for="fullName" class="form-label">Ime i prezime</label>
+      <input type="text" class="form-control" id="fullName" name="fullName" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email adresa</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Broj telefona</label>
+      <input type="tel" class="form-control" id="phone" name="phone" required>
+    </div>
+    <div class="mb-3">
+      <label for="appointmentDate" class="form-label">Datum termina</label>
+      <input type="date" class="form-control" id="appointmentDate" name="appointmentDate" required>
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Poruka</label>
+      <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Pošalji</button>
+  </form>
+</div>

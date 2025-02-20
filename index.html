@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stomatološka ordinacija - Infinity Dental Care</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+        body {
+            background-image: url('background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+	<header>
+	  <!-- Navigacioni meni -->
+	  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+			  <!-- Napomena: data-page atribut sadrži putanju do HTML fajla koji se učitava -->
+			  <li class="nav-item"><a class="nav-link" href="pocetna.html" data-page="pocetna.html">Početna</a></li>
+			  <li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="uslugeDropdown" role="button" data-bs-toggle="dropdown">Usluge</a>
+							<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="usluge/decija_stomatologija.html">Dečija stomatologija</a></li>
+							<li><a class="dropdown-item" href="usluge/protetika.html">Protetika</a></li>
+							<li><a class="dropdown-item" href="usluge/implantologija.html">Implantologija</a></li>
+							<li><a class="dropdown-item" href="usluge/oralna_hirurgija.html">Oralna hirurgija</a></li>
+							<li><a class="dropdown-item" href="usluge/opsta_stomatologija.html">Opšta stomatologija</a></li>
+							<li><a class="dropdown-item" href="usluge/ortodoncija.html">Ortodoncija</a></li>
+							<li><a class="dropdown-item" href="usluge/beljenje_zuba.html">Beljenje zuba</a></li>
+							<li><a class="dropdown-item" href="usluge/parodontologija.html">Parodontologija</a></li>
+						</ul>
+
+						</li>
+			  <li class="nav-item"><a class="nav-link" href="radovi.html" data-page="radovi.html">Naši radovi</a></li>
+			  <li class="nav-item"><a class="nav-link" href="dentalni_turizam.html" data-page="dentalni_turizam.html">Dentalni turizam</a></li>
+			  <li class="nav-item"><a class="nav-link" href="onama.html" data-page="onama.html">O nama</a></li>
+			  <li class="nav-item"><a class="nav-link" href="blog.html" data-page="blog.html">Blog</a></li>
+			  <li class="nav-item"><a class="nav-link" href="zakazivanje.html" data-page="zakazivanje.html">Zakazivanje</a></li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+  </header>
+
+  <!-- Glavni kontejner u koji se učitava sadržaj stranica -->
+  <div class="container mt-5 transparent-div" id="content">
+    <!-- Podrazumevani sadržaj, npr. dobrodošlica -->
+    <h1>Dobrodošli na naš sajt!</h1>
+    <p>Izaberite stranicu iz menija.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white mt-5 p-4 text-center">
+    &copy; 2025 Stomatološka ordinacija - Infinity Dental Care. Sva prava zadržana.
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS za dinamičko učitavanje sadržaja -->
+  <script>
+    $(document).ready(function(){
+      // Kada se klikne na navigacioni link
+      $('.nav-link').click(function(e){
+        e.preventDefault();
+        var page = $(this).data('page');  // Uzimamo putanju do stranice
+        // Učitavamo sadržaj iz datog HTML fajla u #content div
+        $('#content').load(page);
+        // Postavljanje aktivne klase
+        $('.nav-link').removeClass('active');
+        $(this).addClass('active');
+      });
+	  $('#content').load("pocetna.html")
+    });
+  </script>
+</body>
+</html>
